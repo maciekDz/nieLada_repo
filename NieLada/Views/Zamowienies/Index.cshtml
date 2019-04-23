@@ -1,0 +1,123 @@
+﻿@model IEnumerable<NieLada.Models.Zamowienie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KiedyZlozone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZdjecieUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NaKiedy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Budzet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zdostawa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrDomu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrMieszkania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KodPocztowy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miasto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KontoUzytkownikaId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KiedyZlozone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZdjecieUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NaKiedy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Budzet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zdostawa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NrDomu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NrMieszkania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KodPocztowy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miasto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KontoUzytkownikaId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

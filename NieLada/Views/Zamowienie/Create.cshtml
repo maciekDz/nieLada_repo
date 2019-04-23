@@ -1,0 +1,110 @@
+﻿@model NieLada.Models.Zamowienie
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<head>
+
+</head>
+
+<body>
+    <h2>Wprowadź Szegóły</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+        
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nazwa, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nazwa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nazwa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(model => model.NaKiedy, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NaKiedy, new { htmlAttributes = new { @class = "form-control",id="NaKiedy" } })
+                    @Html.ValidationMessageFor(model => model.NaKiedy, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Budzet, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Budzet, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Budzet, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Opis, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="largeTextBox">
+                        @Html.EditorFor(model => model.Opis, new { htmlAttributes = new { @class = "form-control", rows = 6 } })
+                        @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            @Html.HiddenFor(model=>model.KontoUzytkownikaId)
+            @Html.HiddenFor(model => model.KiedyZlozone)
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Gotowe" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+      
+        <script src = "~/Scripts/jquery-3.1.1.min.js" ></script>
+        <script src = "~/Scripts/moment.js" ></script>
+        <script src = "~/Scripts/bootstrap.min.js" ></script >
+        <script src = "~/Scripts/bootstrap-datetimepicker.min.js" ></script>
+        <script src = "~/Scripts/jquery.ui.datepicker-pl.js" ></script>
+
+
+        <link href = "~/Content/bootstrap-datetimepicker.min.css" rel = "stylesheet"/>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+        @*<script type="text/javascript">
+            $(function () {
+                $('#NaKiedy').datetimepicker({
+                    viewMode: 'days',
+                    format: 'dddd, DD MMMM YYYY g: hh:mm'
+                });
+            });
+
+        </script>*@
+
+
+    }
+
+</body>
+
+
+<div>
+    @Html.ActionLink("Powrót", "Index")
+</div>

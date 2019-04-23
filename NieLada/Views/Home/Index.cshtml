@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title =  "NieLada by KT";
+}
+
+<div class="jumbotron" >
+    <h1 style="font-size:2em; margin-bottom:2em">Jak złożyć zamówienie w KT &copy; NieLada</h1>
+    <p class="lead">Dzięki tej aplikacji szybko i skutecznie złożysz zamówienie.</p>
+    <p class="lead">Zapoznaj się z kilkoma pojęciami używanymi w trakcie składania zamówienia</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Style</h2>
+
+        <img max-height="183" src="~/Img/styles.jpg" />
+        <div class="homeImgDescr">
+            <p>Polny,...zbity,... a może bidermeier?</p>
+            <p>Wybierz swój wymażony styl.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <h2>Wielkość</h2>
+        <img max-height="183" src="~/Img/three-bouquet_big_2_small.jpg" />
+        <div class="homeImgDescr">
+            <p>Małe jest piękne...ale duże może więcej!</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+        <h2>Gęstość</h2>
+        <img src="~/Img/density.jpg" />
+        <div class="homeImgDescr">
+            <p>
+                Bukiety można całkowicie zapełnić kwiatami ale posiadane przez nas interesujące dodatki
+                mogą go bardzo upiększyć obniżając równocześnie cenę bukietu.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        @Html.ActionLink("Nasze style " + HttpUtility.HtmlDecode("&raquo;"), "PokazStyla", "Styl", new { area = "" }, new { @class = "btn btn-default" })
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Nasze wielkości " + HttpUtility.HtmlDecode("&raquo;"), "PokazWielkosc", "Wielkosc", new { area = "" }, new { @class = "btn btn-default" })
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Nasze wielkości &raquo;</a></p>*@
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Nasze gęstości " + HttpUtility.HtmlDecode("&raquo;"), "PokazGestosc", "Gestosc", new { area = "" }, new { @class = "btn btn-default" })
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Nasze gęstości &raquo;</a></p>*@
+    </div>
+
+    </div>

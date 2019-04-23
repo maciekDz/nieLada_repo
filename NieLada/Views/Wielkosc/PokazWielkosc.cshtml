@@ -1,0 +1,66 @@
+﻿
+@model IEnumerable<NieLada.Models.Wielkosc>
+
+@{
+    ViewBag.Title = "PokazWielkosc";
+}
+
+<style>
+    .TblImg {
+        max-height: 120px;
+        width: auto;
+    }
+</style>
+
+<h2>Nasze Wielkosci</h2>
+
+<p>
+    @Html.ActionLink("Dodaj wielkosc", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numer)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p style="font-size:1.5em;text-transform:uppercase"><b>@Html.DisplayFor(modelItem => item.Nazwa)</b></p>
+        </td>
+        <td>
+            @{ 
+                if(item.Numer==0)
+                {
+                    @:Nowa Wielkość
+                }
+                else
+                {
+                    @:Nr: @Html.DisplayFor(modelItem => item.Numer) / @ViewBag.IloscWielkosci
+                }
+            }
+            
+        </td>
+    
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            <img class="TblImg" src="@item.ZdjecieUrl" alt="Image" />
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Powrót", "Index", "Home", new { area = "" }, new { @class = "btn btn-default" })
+</div>

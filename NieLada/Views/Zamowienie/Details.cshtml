@@ -1,0 +1,66 @@
+﻿@model NieLada.Models.Zamowienie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Zamowienie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZdjecieUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZdjecieUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NaKiedy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NaKiedy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Budzet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Budzet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
